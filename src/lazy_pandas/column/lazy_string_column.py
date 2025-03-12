@@ -480,3 +480,6 @@ class LazyStringColumn:
             ```
         """
         return self.pad(width, side="right", fillchar=fillchar)
+
+def cat(self, other, sep=""):
+    return self.col.create_from_function("concat", self.col.expr, ConstantExpression(sep), other.expr)
